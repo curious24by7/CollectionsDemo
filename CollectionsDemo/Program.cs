@@ -17,6 +17,8 @@ namespace CollectionsDemo
             Console.WriteLine("--------------------------");
             DoQueueDemo();
             Console.WriteLine("--------------------------");
+            DoSetDemo();
+            Console.WriteLine("--------------------------");
             Console.ReadKey();
         }
         private static void DoListDemo()
@@ -65,6 +67,20 @@ namespace CollectionsDemo
             Console.WriteLine("\nDequeued Person: " + dequeue);
             Console.WriteLine("\nIterating the queue after dequeue one person:");
             Queue<string>.Enumerator enumerator = queue.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+        }
+        private static void DoSetDemo()
+        {
+            Console.WriteLine("In Set: ");
+            HashSet<string> set = new HashSet<string>();
+            set.Add("Chandler");
+            set.Add("Joey");
+            set.Add("Ross");
+            set.Add("Monica");
+            HashSet<string>.Enumerator enumerator = set.GetEnumerator();
             while (enumerator.MoveNext())
             {
                 Console.WriteLine(enumerator.Current);
