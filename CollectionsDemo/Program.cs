@@ -13,6 +13,8 @@ namespace CollectionsDemo
             Console.WriteLine("Welcome to CollectionDemo!");
             DoListDemo();
             Console.WriteLine("--------------------------");
+            DoStackDemo();
+            Console.WriteLine("--------------------------");
             Console.ReadKey();
         }
         private static void DoListDemo()
@@ -28,6 +30,21 @@ namespace CollectionsDemo
             {
                 Console.WriteLine(person);
             }
+        }
+        private static void DoStackDemo()
+        {
+            Console.WriteLine("In Stack:");
+            Stack<string> stack = new Stack<string>();
+            stack.Push("Bertram");
+            stack.Push("Richard");
+            stack.Push("Dinesh");
+            stack.Push("Jared");
+            string Pop = stack.Pop();
+            foreach (var person in stack)
+            {
+                Console.WriteLine(person);
+            }
+            Console.WriteLine("Popped Person:: " + Pop);
         }
     }
 }
