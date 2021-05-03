@@ -19,6 +19,8 @@ namespace CollectionsDemo
             Console.WriteLine("--------------------------");
             DoSetDemo();
             Console.WriteLine("--------------------------");
+            DoDictionaryDemo();
+            Console.WriteLine("--------------------------");
             Console.ReadKey();
         }
         private static void DoListDemo()
@@ -84,6 +86,21 @@ namespace CollectionsDemo
             while (enumerator.MoveNext())
             {
                 Console.WriteLine(enumerator.Current);
+            }
+        }
+        private static void DoDictionaryDemo()
+        {
+            Console.WriteLine("In Dictionary: ");
+            Dictionary<int, string> dictionary = new Dictionary<int, string>();
+            dictionary.Add(111, "Ganesh");
+            dictionary.Add(101, "Shyam");
+            dictionary.Add(110, "Aditya");
+            dictionary.Add(011, "Bhaskar");
+            Console.WriteLine("Accessing Value using Key-111: " + dictionary[111]);
+            Console.WriteLine("\nIterating Dictionary: ");
+            foreach (var person in dictionary)
+            {
+                Console.WriteLine("Key: " + person.Key + " and value: " + person.Value);
             }
         }
     }
