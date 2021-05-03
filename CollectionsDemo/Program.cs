@@ -15,6 +15,8 @@ namespace CollectionsDemo
             Console.WriteLine("--------------------------");
             DoStackDemo();
             Console.WriteLine("--------------------------");
+            DoQueueDemo();
+            Console.WriteLine("--------------------------");
             Console.ReadKey();
         }
         private static void DoListDemo()
@@ -45,6 +47,28 @@ namespace CollectionsDemo
                 Console.WriteLine(person);
             }
             Console.WriteLine("Popped Person:: " + Pop);
+        }
+        private static void DoQueueDemo()
+        {
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("Ted");
+            queue.Enqueue("Barney");
+            queue.Enqueue("Robin");
+            queue.Enqueue("Marshal");
+            Console.WriteLine("Head: " + queue.Peek());
+            Console.WriteLine("Members in Queue (iteration):");
+            foreach (var person in queue)
+            {
+                Console.WriteLine(person);
+            }
+            string dequeue = queue.Dequeue();
+            Console.WriteLine("\nDequeued Person: " + dequeue);
+            Console.WriteLine("\nIterating the queue after dequeue one person:");
+            Queue<string>.Enumerator enumerator = queue.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
         }
     }
 }
